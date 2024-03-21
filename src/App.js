@@ -5,7 +5,15 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div>App</div>
+    <Box width="400px">
+        Navbar
+        <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/exercise/:id" element={<ExerciseDetail />}/>
+            
+
+        </Routes>
+    </Box>
   )
 }
 
