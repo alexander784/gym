@@ -9,15 +9,25 @@ const SearchExercise = () => {
       <Typography fontWeight={700}
 
       // Responsiveness
-      sx={{fontSize:{ ig: "44px", xs:"30px"}}}
+      sx={{fontSize:{ lg: "44px", xs:"30px"}}}
       mb="50px" textAlign="center">
         Awesome Exercise you <br />
         Should Know
 
       </Typography>
-      <Box position="relative" mb ="720px">
+      <Box position="relative" mb ="72px">
         <TextField 
         height="76px"
+        sx={{
+          input:{ fontWeight:"700",
+          border:"none",
+          borderRadius:"4px"
+    },
+    width: { lg: "1170px",
+     xs: "350px"},
+    backgroundColor: "#fff",
+    borderRadius: "40px"
+        }}
         value=""
         onchange={ () => {}}
         placeholder='Search Exercises'
