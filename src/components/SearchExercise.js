@@ -1,7 +1,18 @@
 import React from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
+
 
 const SearchExercise = () => {
+
+  const [ search, 
+    setSearch] = useState("");
+  const handleSearch = aync () => {
+    if(search)
+  }
+
+
+
   return (
     // Wrap the section with a Stack component
     <Stack alignItems="center" mt="37px"
@@ -28,10 +39,11 @@ const SearchExercise = () => {
     backgroundColor: "#fff",
     borderRadius: "40px"
         }}
-        value=""
-        onchange={ () => {}}
+        value="search"
+        onchange={ (e) => setSearch(e.target.value.toLowerCase())}
         placeholder='Search Exercises'
-        type="text"/>
+        type="text"
+        />
         
         <Button className='search-btn'
         sx= {{
@@ -43,7 +55,8 @@ const SearchExercise = () => {
           height:"56px",
           position:"absolute",
           right:"0"
-        }}>
+        }} 
+        onClick={}>
           Search
 
         </Button>
