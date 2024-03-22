@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 
 const SearchExercise = () => {
   return (
@@ -32,6 +32,21 @@ const SearchExercise = () => {
         onchange={ () => {}}
         placeholder='Search Exercises'
         type="text"/>
+        
+        <Button className='search-btn'
+        sx= {{
+          bgcolor:"#ff2625",
+          color:"#fff",
+          textTransform:"none",
+          width: {lg: "175px", xs: "80px"},
+          fontsize: {lg: "20px", xs: "14px"},
+          height:"56px",
+          position:"absolute",
+          right:"0"
+        }}>
+          Search
+
+        </Button>
 
       </Box>
 
