@@ -4,10 +4,9 @@ import { useState } from 'react';
 import { fetchData, exerciseOptions } from '../utils/FetchData';
 import HorizontalScrollBar from './HorizontalScrollBar';
 
-const SearchExercise = () => {
+const SearchExercise = ({ setExercises, bodyPart, setBodyPart}) => {
   // Manage state of search and exercises
   const [ search, setSearch] = useState("");
-  const [exercises, setExercises] = useState([]);
   const [bodyparts, setBodyParts] = useState([]);
  
   // Fetch the exercise body parts
@@ -97,7 +96,8 @@ const SearchExercise = () => {
       <Box sx={{ position:'relative',
                   width:"100%",
                   p:"20px"}}>
-            <HorizontalScrollBar data={bodyparts} />
+            <HorizontalScrollBar data={bodyparts}
+            bodyPart={bodyparts} setbodyPart={setBodyPart} />
 
       </Box>
 
