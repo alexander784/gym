@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@mui/material';
 import Icon from "../assets/icons/icon.png";
 
-const BodyParts = ({ item, setBodyPart, bodyPart }) => {
+const BodyPart = ({ item, setBodyParts, bodyPart }) => {
   return (
     <Stack 
        type="button"
@@ -28,4 +28,4 @@ const BodyParts = ({ item, setBodyPart, bodyPart }) => {
   )
 } 
 
-export default BodyParts;
+export default BodyPart;
