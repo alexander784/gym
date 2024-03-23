@@ -18,6 +18,7 @@ const SearchExercise = () => {
 
       setBodyParts(["all", ...bodyPartsData]);
     }
+    fetchExercisesData();
 
   }, [])
 
@@ -91,6 +92,12 @@ const SearchExercise = () => {
           Search
 
         </Button>
+      </Box>
+ 
+      <Box sx={{ position:'relative',
+                  width:"100%",
+                  p:"20px"}}>
+            <HorizontalScrollbar data={bodyparts} />
 
       </Box>
 
