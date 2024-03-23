@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 import { fetchData, exerciseOptions } from '../utils/FetchData';
@@ -8,6 +8,18 @@ const SearchExercise = () => {
   // Manage state of search and exercises
   const [ search, setSearch] = useState("");
   const [exercises, setExercises] = useState([]);
+  const [bodyparts, setBodyParts] = useState([]);
+ 
+  // Fetch the exercise body parts
+  useEffect (() => {
+    const fetchExercisesData = async () => {
+      const bodyPartsData = await fetchData
+      ("https://exercisedb.p.rapidapi.com/exercises/bodyPartList", exerciseOptions);
+
+      setBodyParts(["all", ...bodyPartsData]);
+    }
+
+  }, [])
 
   const handleSearch = async () => {
     // Check for search query
