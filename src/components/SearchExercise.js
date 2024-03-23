@@ -5,14 +5,28 @@ import { fetchData, exerciseOptions } from '../utils/FetchData';
 import { wait } from '@testing-library/user-event/dist/utils';
 
 const SearchExercise = () => {
-
+  // Manage state of search and exercises
   const [ search, setSearch] = useState("");
+  const [exercises, setExercises] = useState([]);
 
   const handleSearch = async () => {
+    // Check for search query
     if(search) {
       const exerciseData = await fetchData 
       ("https://exercisedb.p.rapidapi.com/exercises", exerciseOptions);
-console.log(exerciseData)
+
+      // Filter fetched exercise name,target,equipment or body parts 
+      const searchedExercises = exerciseData.filter(
+        (exercise) => exercise.name.toLowerCase().includes(search)
+          || exercise.target.toLowerCase().includes(search)
+          || exercise.equipment.toLowerCase().includes(search)
+          || exercise.bodyPart.toLowerCase().includes(search)
+
+      );
+      // Reset search state to empty string after filtering
+      setSearch("");
+      // Update exercises state with filtered list of exercises
+      setExercises(searchedExercises);
     }
   }
 
