@@ -3,10 +3,12 @@ import { Box } from '@mui/material';
 import Exercises from "../components/Exercises";
 import HeroBanner from '../components/HeroBanner';
 import SearchExercise from '../components/SearchExercise';
-const Home = () => {
+import { useState } from 'react';
 
+
+const Home = () => {
   const [exercises, setExercises] = useState([]);
-const [bodyPart, setbodyPart] = useState(all);
+  const [bodyPart, setbodyPart] = useState("all");
   return (
     <Box>
         
