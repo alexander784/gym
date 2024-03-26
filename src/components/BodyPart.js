@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack, Typography } from '@mui/material';
 import Icon from "../assets/icons/icon.png";
 
-const BodyPart = ({ item, setBodyPart, bodyPart, BodyPart }) => {
+const BodyPart = ({ item, setBodyPart, bodyPart }) => {
 
   return (
     <Stack 
@@ -11,25 +11,32 @@ const BodyPart = ({ item, setBodyPart, bodyPart, BodyPart }) => {
        justifyContent="center"
        className='bodyPart-card'
       //  Responsiveness
-       sx={{
-        borderTop: bodyPart === item ? "4px solid #ff2625" : "",
-        backgroundColor:"#fff",
+       sx={
+        bodyPart === item ? { borderTop:
+        "4px solid #ff2625",
+        background:"#fff",
         borderBottomLeftRadius: "20px",
         width: "270px",
         height:"280px",
         cursor:"pointer",
         gap:"47px"
+        } : { background: '#fff',
+         borderBottomLeftRadius: '20px', 
+         width: '270px',
+         height: '282px',
+         cursor: 'pointer',
+         gap: '47px' }}
 
-       }}
+       
+       
 
        onClick={() => {
-        // setBodyPart(item);
+        setBodyPart(item);
         window.scrollTo({ top:1800, left: 100, behavior: "smooth" })
        }
       }
-
+      >
        
-    >
         <img src={Icon} alt='dumbbell'
          style={{ width: "40px", height:"40px"}}/>
 

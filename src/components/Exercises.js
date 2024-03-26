@@ -1,9 +1,12 @@
 import React from 'react';
 import { Pagination, Typography } from '@mui/material';
 import {Stack, Box } from '@mui/material';
+import ExerciseCard from './ExerciseCard';
+
+
 
 const Exercises = ({exercises,setExercises, bodyPart }) => 
-{console.log(exercises);
+{
   return (
     <Box id="exercises"
     sx={{mt: { lg: "110px" }}}
@@ -12,14 +15,14 @@ const Exercises = ({exercises,setExercises, bodyPart }) =>
     >
       <Typography variant='h4' mb="46px">
         Showing Results
-
       </Typography>
       <Stack direction="row" sx={{ gap: { lg: "110px", xs: "50px"}}}
       flexWrap="wrap" justifyContent="center">
         {/* Map over exercises */}
-        {exercises.map((exercise, index) => {
-          <p>{exercise.name}</p>
-        })}
+        {exercises.map((exercise, index) => (
+          <ExerciseCard key={index}
+           exercise={exercise}/>
+        ))}
 
       </Stack>
 
