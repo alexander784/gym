@@ -14,7 +14,7 @@
 ## Getting Started
 <p>To run this project locally or contribute to its development: </p>
 1. Clone the Repo: <br>
-   git clone `https://github.com/alexander784/gym.git`
+  git clone `https://github.com/alexander784/gym.git`
 
 2. Install dependecies:
   `npm install`
