@@ -2,9 +2,9 @@ import React from 'react';
 import { Stack, Typography } from '@mui/material';
 import Icon from "../assets/icons/icon.png";
 
-const BodyPart = ({ item, setBodyPart, bodyPart }) => {
 
-  return (
+const BodyPart = ({ item, setBodyPart, bodyPart }) => (
+
     <Stack 
        type="button"
        alignItems="center"
@@ -44,6 +44,6 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
          </Typography>
     </Stack>
   )
-} 
+
 
 export default BodyPart;
